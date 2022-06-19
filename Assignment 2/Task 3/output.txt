@@ -1,0 +1,279 @@
+_________________________________________________________________________
+_________________________________________________________________________
+The following are Matrices that will be used for (succesful) calcuations.
+
+-------------------------------------
+Matrix A is:
+         7         5
+         2       -13
+
+-------------------------------------
+Matrix b is:
+        15
+         8
+
+-------------------------------------
+Matrix C is:
+         1         5         9
+         7         3         5
+         8      4.51         7
+
+-------------------------------------
+Matrix d is:
+        15
+        25
+        35
+
+-------------------------------------
+Matrix f is:
+        -9
+        -5
+
+-------------------------------------
+_________________________________________________________________________
+_________________________________________________________________________
+The followin are Matrices that will be used for testing error messages.
+
+-------------------------------------
+Matrix Q is:
+         1         2         3
+         4         5         6
+         7         8         9
+
+-------------------------------------
+Matrix U is:
+         0         0
+         0         0
+         0         0
+
+-------------------------------------
+Matrix V is:
+         0
+
+-------------------------------------
+Matrix x is:
+         0
+         0
+
+-------------------------------------
+Matrix y is:
+         0
+         0
+         0
+
+-------------------------------------
+Matrix Z is:
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+-------------------------------------
+_________________________________________________________________________
+_________________________________________________________________________
+Tests for: operator~():double
+
+The Following will try to calculate the determinant of a 1x1 matrix, ~V
+This should result in an error message as it is not 2x2 or 3x3. 0 should be returned
+Take note that although it is not tested, the matrix should remain unchanged.
+
+-------------------------------------
+Error: invalid matrix dimensions
+Returned Value: 0
+-------------------------------------
+
+The Following will try to calculate the determinant of a 4x4 matrix, ~V
+This should result in an error message as it is not 2x2 or 3x3. 0 should be returned
+Take note that although it is not tested, the matrix should remain unchanged.
+
+-------------------------------------
+Error: invalid matrix dimensions
+Returned Value: 0
+-------------------------------------
+
+The Following will try to calculate the determinant of a 4x2 matrix, ~V
+This should result in an error message as it is not 2x2 or 3x3. 0 should be returned
+Take note that although it is not tested, the matrix should remain unchanged.
+
+-------------------------------------
+Error: invalid matrix dimensions
+Returned Value: 0
+-------------------------------------
+
+The following calculates the determinant of a 2x2 matrix, ~A.
+Remember that the determinant should also be stored in the denomitator private member.
+
+-------------------------------------
+Determinant of Matrix A is: -101
+-------------------------------------
+
+The following calculates the determinant of a 3x3 matrix, ~C.
+Remember that the determinant should also be stored in the denomitator private member.
+
+-------------------------------------
+Determinant of Matrix C is: 21.7
+-------------------------------------
+_________________________________________________________________________
+_________________________________________________________________________
+Tests for: operator|(Matrix&):double*
+
+The following will try to calculate the linear determinants of a 3x2 matrix, U|y
+This should result in an error message as the lhs matrix is not nxn, and NULL should be returned.
+It is not tested, but both Matrices should remain unchanged.
+
+-------------------------------------
+Error: non-square matrix provided
+Returned pointer is: 0
+-------------------------------------
+
+The following will try to calculate the linear determinants of a 1x1 matrix, V|y
+This should result in an error message as the lhs matrix is not 2x2 or 3x3, and NULL should be returned.
+It is not tested, but both Matrices should remain unchanged.
+
+-------------------------------------
+Error: incorrect number of variables
+Returned pointer is: 0
+-------------------------------------
+
+The following will try to calculate the linear determinants of a 4x4 matrix, Z|y
+This should result in an error message as the lhs matrix is not 2x2 or 3x3, and NULL should be returned.
+It is not tested, but both Matrices should remain unchanged.
+
+-------------------------------------
+Error: incorrect number of variables
+Returned pointer is: 0
+-------------------------------------
+
+The following will try to calculate the linear determinants of a 2x2 matrix, A|T
+This should result in an error message as the rhs matrix is not nx1, and NULL should be returned.
+It is not tested, but both Matrices should remain unchanged.
+
+-------------------------------------
+Error: incorrect number of variables
+Returned pointer is: 0
+-------------------------------------
+
+The following will try to calculate the linear determinants of a 2x2 matrix, A|d
+Although the dimensions of the lhs are correct, it should still result in an error message
+as, the rhs matrix's row count doesn't match the left, and NULL should be returned.
+It is not tested, but both Matrices should remain unchanged.
+
+-------------------------------------
+Error: incorrect number of variables
+Returned pointer is: 0
+-------------------------------------
+
+The following will determine the linear determinants of a 2x2 Matrix, A|f.
+These determinants should also be stored in the respective private member.
+
+-------------------------------------
+Linear Determinant 0 is: 142
+Linear Determinant 1 is: -17
+-------------------------------------
+
+The following will determine the linear determinants of a 3x3 Matrix, C|d.
+These determinants should also be stored in the respective private member.
+
+-------------------------------------
+Linear Determinant 0 is: 46.8
+Linear Determinant 1 is: 270
+Linear Determinant 2 is: -119
+-------------------------------------
+_________________________________________________________________________
+_________________________________________________________________________
+Tests for: operator|=(Matrix&):Matrix
+
+The following will try to set the new Matrix s equal to the linear solutions of a 3x2 matrix, s = U|=y
+This should result in an error message as the lhs matrix is not 3x3 or 2x2, and the rhs matrix should be returned.
+s shpuld now be equal to y. It is not tested, but both Matrices should remain unchanged.
+
+-------------------------------------
+Error: incorrect number of variables
+Resulting Matrix s is:
+         0
+         0
+         0
+-------------------------------------
+
+The following will try to set s equal to the solutions of a 4x4 matrix, s = Z|=d.
+This should result in an error message as it is not 2x2 or 3x3.
+The rhs side matrix should be returned and s should therefore now be equal to d.
+It is not tested but noth Z and d should remain unchanched.
+
+-------------------------------------
+Error: incorrect number of variables
+Matrix s is now:
+        15
+        25
+        35
+-------------------------------------
+
+The following will try to set s equal to the solutions of a 1x1 matrix, s = V|=b.
+This should result in an error message as it is not 2x2 or 3x3.
+The rhs side matrix should be returned and s should therefore now be equal to b.
+It is not tested but noth V and b should remain unchanched.
+
+-------------------------------------
+Error: incorrect number of variables
+Matrix s is now:
+        15
+         8
+-------------------------------------
+
+The following will attempt to set s equal to the linear solutions of a 3x3 matrix, s = C|b.
+While the lhs matrix is of the right size, it will result in an error
+message as the rhs matrix does not have the correct amount of rows.
+It is not tested, but C and b should remain unchanged, and s should now be equal to b.
+
+-------------------------------------
+Error: incorrect number of variables
+Matrix s is now:
+        15
+         8
+-------------------------------------
+
+The following will attempt to set s equal to the linear solutions of a 3x3 matrix, s = C|=C.
+While the lhs matrix is of the right size, it will result in an error
+message as the rhs matrix does not have the correct dimensions.
+It is not tested, but C should remain unchanged, and s should now be equal to C.
+
+-------------------------------------
+Error: incorrect number of variables
+Matrix s is now:
+         1         5         9
+         7         3         5
+         8      4.51         7
+-------------------------------------
+
+This will attempt set s equal to linear solutions of of a 3x3 matrix, s = Q|=d.
+While both matrices has the correct dimensions, this will result in an error message
+as the determinant of Q is 0.
+Q and d should remain unchanged, and s should now be equal to d.
+
+-------------------------------------
+Error: division by zero
+Matrix s is now:
+        15
+        25
+        35
+-------------------------------------
+
+This will determine the linear solutions of a 2x2 matrix and store the results in matrix s. s = A|=b
+It is not tested b should remain unchanged, and the solutions should be stored in linearSolutions of A.
+
+-------------------------------------
+Matrix s is now:
+      2.33
+    -0.257
+-------------------------------------
+
+Lastly, the linear solutions of a 3x3 matrix will be calculated and stored in s. s = C|=d
+It is not tested but d should remain unchanged and the solutions should be stored in linearSolutions of C.
+
+-------------------------------------
+Matrix s is now:
+      2.16
+      12.4
+     -5.49
+-------------------------------------
+end of testing
