@@ -1,0 +1,33 @@
+[H,I,J,K,L,M,N]
+[f,g,h,i,j,k,l]
+[a,b,c,d,e,f,g]
+
+
+[N,M,L,K,J,I,H]
+[l,k,j,i,h,g,f]
+[g,f,e,d,c,b,a]
+
+H: [N,M,L,K,J,I]
+I: [N,M,L,K,J]
+J: [N,M,L,K]
+K: [N,M,L]
+L: [N,M]
+M: [N]
+N: []
+
+f: [l,k,j,i,h,g]
+g: [l,k,j,i,h]
+h: [l,k,j,i]
+i: [l,k,j]
+j: [l,k]
+k: [l]
+l: []
+
+a: [g,f,e,d,c,b,*]
+b: [g,f,e,d,c,*,*]
+c: [g,f,e,d,*,*,*]
+d: [g,f,e,*,*,*,*]
+e: [g,f,*,*,*,*,*]
+f: [g,*,*,*,*,*,*]
+g: [*,*,*,*,*,*,*]
+

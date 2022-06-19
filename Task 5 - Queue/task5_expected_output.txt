@@ -1,0 +1,33 @@
+[R,S,T,U,V,W,X]
+[d,e,f,g,h,i,j]
+[A,B,C,D,E,F,G]
+
+
+[X,W,V,U,T,S,R]
+[j,i,h,g,f,e,d]
+[G,F,E,D,C,B,A]
+
+X: [W,V,U,T,S,R]
+W: [V,U,T,S,R]
+V: [U,T,S,R]
+U: [T,S,R]
+T: [S,R]
+S: [R]
+R: []
+
+j: [i,h,g,f,e,d]
+i: [h,g,f,e,d]
+h: [g,f,e,d]
+g: [f,e,d]
+f: [e,d]
+e: [d]
+d: []
+
+G: [F,E,D,C,B,A,*]
+F: [E,D,C,B,A,*,*]
+E: [D,C,B,A,*,*,*]
+D: [C,B,A,*,*,*,*]
+C: [B,A,*,*,*,*,*]
+B: [A,*,*,*,*,*,*]
+A: [*,*,*,*,*,*,*]
+

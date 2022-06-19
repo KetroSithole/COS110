@@ -1,0 +1,20 @@
+[e,d,c,b,a]
+[a,b,c,d,e]
+
+
+[e,d,b,a]
+[e,d,b]
+[d,b]
+
+Clear works correctly
+[]
+[d,b]
+[d,b]
+
+[z,b]
+
+[d,b]
+d b
+[d,b]
+empty structure
+
